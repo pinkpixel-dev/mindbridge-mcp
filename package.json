@@ -1,0 +1,86 @@
+{
+  "name": "@pinkpixel/mindbridge",
+  "version": "1.2.0",
+  "type": "module",
+  "description": "An MCP server that bridges the gap between your applications and various LLM providers",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Pink Pixel <admin@pinkpixel.dev>",
+  "license": "MIT",
+  "bin": {
+    "mindbridge": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pinkpixel-dev/mindbridge.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "mcp",
+    "llm",
+    "ai",
+    "openai",
+    "anthropic",
+    "claude",
+    "gpt",
+    "gemini",
+    "deepseek",
+    "ollama"
+  ],
+  "homepage": "https://github.com/pinkpixel-dev/mindbridge#readme",
+  "scripts": {
+    "build": "rimraf dist && tsc && chmod +x dist/cli.js",
+    "prepublishOnly": "npm run build",
+    "start": "node dist/index.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "lint": "eslint 'src/**/*.ts'",
+    "format": "prettier --write 'src/**/*.ts'",
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "test": "mocha --require ts-node/register 'test/**/*.test.ts'",
+    "test:watch": "mocha --require ts-node/register --watch --watch-files src,test 'test/**/*.test.ts'",
+    "test:providers": "node --loader ts-node/esm test-providers.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "@google-ai/generativelanguage": "^2.1.0",
+    "@modelcontextprotocol/sdk": "^1.9.0",
+    "@pinkpixel/mindbridge": "^1.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^5.1.0",
+    "openai": "^4.29.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.11",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.28",
+    "@types/sinon": "^17.0.3",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "chai": "^4.4.1",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "mocha": "^10.3.0",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "sinon": "^17.0.1",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

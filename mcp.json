@@ -1,0 +1,54 @@
+{
+  "mcpServers": {
+    "mindbridge": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@pinkpixel/mindbridge@latest"
+      ],
+      "env": {
+        "OPENAI_API_KEY": "OPENAI_API_KEY_HERE",
+        "ANTHROPIC_API_KEY": "ANTHROPIC_API_KEY_HERE",
+        "GOOGLE_API_KEY": "GOOGLE_API_KEY_HERE",
+        "DEEPSEEK_API_KEY": "DEEPSEEK_API_KEY_HERE",
+        "OPENROUTER_API_KEY": "OPENROUTER_API_KEY_HERE"
+      },
+      "provider_config": {
+        "openai": {
+          "default_model": "o3-mini"
+        },
+        "anthropic": {
+          "default_model": "claude-3-7-sonnet-20250219"
+        },
+        "google": {
+          "default_model": "gemini-2.0-flash"
+        },
+        "deepseek": {
+          "default_model": "deepseek-reasoning"
+        },
+        "openrouter": {
+          "default_model": "openrouter/quasar-alpha"
+        },
+        "ollama": {
+          "base_url": "http://localhost:11434",
+          "default_model": "llama3"
+        },
+        "openai_compatible": {
+          "api_key": "API_KEY_HERE_OR_REMOVE_IF_NOT_NEEDED",
+          "base_url": "FULL_API_URL_HERE",
+          "available_models": ["MODEL1", "MODEL2"],
+          "default_model": "MODEL1"
+        }
+      },
+      "default_params": {
+        "temperature": 0.7,
+        "reasoning_effort": "medium"
+      },
+      "alwaysAllow": [
+        "getSecondOpinion",
+        "listProviders",
+        "listReasoningModels"
+      ]
+    }
+  }
+}

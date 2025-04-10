@@ -1,0 +1,55 @@
+# Source files
+src/
+test/
+*.ts
+!dist/**/*.d.ts
+
+# Development files
+.vscode/
+.idea/
+.github/
+.git/
+.gitignore
+.eslintrc.json
+.eslintignore
+.prettierrc
+.mocharc.json
+tsconfig.json
+APIS/
+MCP_INSTRUCTIONS/
+
+# Test files
+test/
+test-providers.ts
+run-*.sh
+
+# Temporary files
+*.log
+*.tmp
+*.temp
+.cache/
+coverage/
+.nyc_output/
+
+# Environment files
+.env
+.env.example
+.env.local
+.env.*.local
+
+# Development certificates
+*.pem
+*.key
+*.crt
+
+# Documentation files (except README.md which is included in files field)
+CONTRIBUTING.md
+OVERVIEW.md
+PLAN.md
+
+# Build scripts
+install.sh
+
+# Misc
+.DS_Store
+Thumbs.db

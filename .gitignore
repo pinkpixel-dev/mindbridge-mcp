@@ -1,0 +1,65 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+dist/
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Development certificates
+*.pem
+*.key
+*.crt
+
+# VS Code workspace settings (optional)
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# Development
+PLAN.md
+OVERVIEW.md
+APIS/
+MCP_INSTRUCTIONS/
+test/
+test/providers/
+run-gemini-deepseek-test.sh
+run-gemini-test.sh
+run-provider-test.sh
+test-gemini-deepseek.ts
+test-gemini.ts
+test-providers.ts
