@@ -3,6 +3,7 @@
 </p>
 
 # MindBridge MCP Server ⚡ The AI Router for Big Brain Moves
+[![smithery badge](https://smithery.ai/badge/@pinkpixel-dev/mindbridge-mcp)](https://smithery.ai/server/@pinkpixel-dev/mindbridge-mcp)
 
 MindBridge is your AI command hub — a Model Context Protocol (MCP) server built to unify, organize, and supercharge your LLM workflows.
 
@@ -56,6 +57,14 @@ npm install -g @pinkpixel/mindbridge
 
 # use with npx
 npx @pinkpixel/mindbridge
+```
+
+### Installing via Smithery
+
+To install mindbridge-mcp for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@pinkpixel-dev/mindbridge-mcp):
+
+```bash
+npx -y @smithery/cli install @pinkpixel-dev/mindbridge-mcp --client claude
 ```
 
 ### Option 2: Install from source
