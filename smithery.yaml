@@ -1,0 +1,62 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    properties:
+      OPENAI_API_KEY:
+        type: string
+        description: Your OpenAI API key.
+      ANTHROPIC_API_KEY:
+        type: string
+        description: Your Anthropic API key.
+      DEEPSEEK_API_KEY:
+        type: string
+        description: Your DeepSeek API key.
+      GOOGLE_API_KEY:
+        type: string
+        description: Your Google API key.
+      OPENROUTER_API_KEY:
+        type: string
+        description: Your OpenRouter API key.
+      OLLAMA_BASE_URL:
+        type: string
+        description: "Base URL for your Ollama instance (default: http://localhost:11434)."
+      OPENAI_COMPATIBLE_API_KEY:
+        type: string
+        description: API key for OpenAI-compatible services (if needed).
+      OPENAI_COMPATIBLE_API_BASE_URL:
+        type: string
+        description: Base URL for OpenAI-compatible services.
+    default: {}
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => { 
+      // Prepare environment variables based on given config
+      const env = {};
+      if(config.OPENAI_API_KEY) env.OPENAI_API_KEY = config.OPENAI_API_KEY;
+      if(config.ANTHROPIC_API_KEY) env.ANTHROPIC_API_KEY = config.ANTHROPIC_API_KEY;
+      if(config.DEEPSEEK_API_KEY) env.DEEPSEEK_API_KEY = config.DEEPSEEK_API_KEY;
+      if(config.GOOGLE_API_KEY) env.GOOGLE_API_KEY = config.GOOGLE_API_KEY;
+      if(config.OPENROUTER_API_KEY) env.OPENROUTER_API_KEY = config.OPENROUTER_API_KEY;
+      if(config.OLLAMA_BASE_URL) env.OLLAMA_BASE_URL = config.OLLAMA_BASE_URL;
+      if(config.OPENAI_COMPATIBLE_API_KEY) env.OPENAI_COMPATIBLE_API_KEY = config.OPENAI_COMPATIBLE_API_KEY;
+      if(config.OPENAI_COMPATIBLE_API_BASE_URL) env.OPENAI_COMPATIBLE_API_BASE_URL = config.OPENAI_COMPATIBLE_API_BASE_URL;
+      return {
+        command: 'node',
+        args: ['dist/index.js'],
+        env
+      };
+    }
+  exampleConfig:
+    OPENAI_API_KEY: your-openai-api-key
+    ANTHROPIC_API_KEY: your-anthropic-api-key
+    DEEPSEEK_API_KEY: your-deepseek-api-key
+    GOOGLE_API_KEY: your-google-api-key
+    OPENROUTER_API_KEY: your-openrouter-api-key
+    OLLAMA_BASE_URL: http://localhost:11434
+    OPENAI_COMPATIBLE_API_KEY: optional-api-key-if-needed
+    OPENAI_COMPATIBLE_API_BASE_URL: https://api.openai-compatible.com
