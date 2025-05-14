@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/pinkpixel-dev-mindbridge-mcp-badge.png)](https://mseep.ai/app/pinkpixel-dev-mindbridge-mcp)
+
 <p align="center">
   <img src="https://res.cloudinary.com/di7ctlowx/image/upload/v1744269194/logo_ghalxq.png" alt="Mindbridge Logo" width="400">
 </p>
